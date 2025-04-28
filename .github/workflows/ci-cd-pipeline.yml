@@ -1,0 +1,48 @@
+name: Full Stack CI/CD - Frontend and Backend
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-frontend:
+    if: github.ref == 'refs/heads/main'
+    name: Build Angular Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies and build frontend
+        working-directory: user-role-management-frontend
+        run: |
+          npm install
+          npm run build
+
+  build-backend:
+    if: github.ref == 'refs/heads/master'
+    name: Build ASP.NET Core Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies and build backend
+        working-directory: UserRoleManagementApi
+        run: |
+          dotnet restore
+          dotnet build --configuration Release
