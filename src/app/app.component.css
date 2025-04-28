@@ -1,0 +1,22 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #001f3f, #003366);
+    padding: 1rem 2rem;
+  }
+  
+  .nav-left h1 {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  
+  .nav-right a {
+    margin-left: 20px;
+    color: #e0e0e0;
+    font-weight: 600;
+  }
+  
+  .nav-right a.active-link {
+    border-bottom: 2px solid #4ea8de;
+  }

@@ -1,0 +1,43 @@
+.dashboard-page {
+    height: calc(100vh - 80px);
+    background: linear-gradient(to right, #0474a4); /* Same blue gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Inter', sans-serif;
+ }
+ 
+ h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+ }
+ 
+ p {
+    font-size: 18px;
+    text-align: center;
+    color: #cfd8dc; /* lighter text for description */
+ }
+ 
+ .dashboard-actions {
+    margin-top:40px;
+    display:flex;
+    gap:20px;
+ }
+ 
+ .dashboard-actions button {
+    padding:12px 30px;
+    background-color:#003c7d;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+ }
+ 
+ .dashboard-actions button:hover {
+    background-color:#003c7d;
+    
+ }
