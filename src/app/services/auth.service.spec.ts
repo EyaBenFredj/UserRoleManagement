@@ -1,29 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { TestBed } from '@angular/core/testing';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthService {
-  private apiUrl = 'https://localhost:7137/api'; // Your backend base URL
+import { AuthService } from './auth.service';
 
-  constructor(private http: HttpClient, private router: Router) {}
+describe('AuthService', () => {
+  let service: AuthService;
 
-  login(email: string, password: string) {
-    return this.http.post(`${this.apiUrl}/auth/login`, { email, password });
-  }
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(AuthService);
+  });
 
-  register(name: string, email: string, password: string) {
-    return this.http.post(`${this.apiUrl}/auth/register`, { name, email, password });
-  }
-
-  logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
-  }
-
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
-  }
-}
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
