@@ -143,11 +143,11 @@ user-role-management-frontend/
 > _Include screenshots of your login page, dashboard, user management, etc._
 
 | Login Page        | Dashboard          | Role Management     |
-|-------------------|--------------------|----------------------|
-|![image](https://github.com/user-attachments/assets/76fe91b2-db92-4194-9c43-4c4d95cb49d8)
- |![image](https://github.com/user-attachments/assets/d6f83969-a4f6-4da5-bddc-cf0a78c1abf0)
- | ![image](https://github.com/user-attachments/assets/5cb61a37-95cd-4a85-8ad9-43d186409ba6)
- |
+||![image](https://github.com/user-attachments/assets/76fe91b2-db92-4194-9c43-4c4d95cb49d8)
+| |![image](https://github.com/user-attachments/assets/d6f83969-a4f6-4da5-bddc-cf0a78c1abf0)
+| | ![image](https://github.com/user-attachments/assets/5cb61a37-95cd-4a85-8ad9-43d186409ba6)
+|
+
 
 _📁 Place your screenshots in `/screenshots` folder and update links accordingly._
 
