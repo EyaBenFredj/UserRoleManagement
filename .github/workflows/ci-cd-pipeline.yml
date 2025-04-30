@@ -1,5 +1,7 @@
 name: Full Stack CI/CD - Frontend and Backend
 
+
+
 on:
   push:
     branches:
