@@ -84,6 +84,7 @@ user-role-management-frontend/
 ├── .github/
 │   └── workflows/
 │       └── ci-cd-pipeline.yml
+├── Dockerfile
 ├── src/
 │   ├── app/
 │   │   ├── guards/           # Route guards (e.g., AuthGuard, RoleGuard)
