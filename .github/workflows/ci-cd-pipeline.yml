@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-frontend:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref_name == 'main'
     name: Build Angular Frontend
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +30,7 @@ jobs:
           npm run build
 
   build-backend:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref_name == 'master'
     name: Build ASP.NET Core Backend
     runs-on: ubuntu-latest
     steps:
