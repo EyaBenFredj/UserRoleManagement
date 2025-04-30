@@ -150,45 +150,110 @@ user-role-management-frontend/
 
 ## 📦 Deployment
 
-1. Build the app:
+1. Build:
    ```bash
    ng build --prod
    ```
 
-2. Deploy the contents of `dist/` to your preferred hosting (e.g., Firebase, Netlify, Vercel, Nginx).
+2. Deploy the contents of `dist/` to your hosting (e.g., Firebase, Netlify, Vercel, NGINX)
 
 ---
 
-## 🔁 CI/CD
+## 🔁 CI/CD Pipeline
 
-A sample GitHub Actions pipeline is included:
-![image](https://github.com/user-attachments/assets/c4653e0c-5caa-447f-ad14-edaf3d395113)
+A GitHub Actions workflow is configured to build either the frontend or backend based on the branch pushed to:
 
+- `main` → Angular frontend build
+- `master` → .NET Core backend build
 
+### `.github/workflows/ci-cd-pipeline.yml`
+
+```yaml
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-frontend:
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: |
+          npm install
+          npm run build
+
+  build-backend:
+    if: github.ref_name == 'master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: |
+          dotnet restore
+          dotnet build --configuration Release
 ```
-.github/workflows/ci-cd-pipeline.yml
-```
 
-It handles linting, building, and testing on push to `main`.
+### CI/CD Screenshot 📸
+![CI/CD Workflow](https://github.com/user-attachments/assets/c4653e0c-5caa-447f-ad14-edaf3d395113)
 
 ---
-##Docker 
-![image](https://github.com/user-attachments/assets/4edd455c-bb3c-4989-a937-1065da7cc55c)
+
+## 🐳 Dockerization
+
+### 🔨 Dockerfile (Frontend)
+
+```dockerfile
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build --prod
+
+FROM nginx:alpine
+COPY --from=build /app/dist/* /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+### 🔧 Docker Commands
+
+#### Build the Image
+```bash
+docker build -t user-role-management-frontend .
+```
+
+#### Run the Container
+```bash
+docker run -d -p 4200:80 --name frontend-container user-role-management-frontend
+```
+
+#### Stop & Remove Container
+```bash
+docker stop frontend-container
+docker rm frontend-container
+```
+
+### Docker Screenshot 📸
+![Docker Build](https://github.com/user-attachments/assets/4edd455c-bb3c-4989-a937-1065da7cc55c)
+
+---
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/feature-name`)
-3. Commit your changes
-4. Push to the branch
+1. Fork the repository  
+2. Create a feature branch: `git checkout -b feature/my-feature`  
+3. Commit your changes  
+4. Push to your fork  
 5. Open a pull request
 
 ---
 
-## 🧾 License
 
-This project is licensed under the MIT License.
-
----
-
-Let me know if you'd like a sample screenshot layout or want help creating your first service or interceptor file.
