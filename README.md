@@ -6,7 +6,7 @@
 
 This is the **frontend** of the User & Role Management System, built with **Angular**. It connects to a backend REST API developed using **.NET Core 8**, with **PostgreSQL** as the database. The app supports user authentication (via JWT), role-based access control, and CRUD operations for users and posts.
 
-> 🔗 **Backend Repository**: _[Add the link here]_
+> 🔗 **Backend Repository**:(https://github.com/EyaBenFredj/UserRoleManagement/tree/master)
 
 ---
 
