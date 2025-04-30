@@ -162,6 +162,8 @@ user-role-management-frontend/
 ## 🔁 CI/CD
 
 A sample GitHub Actions pipeline is included:
+![image](https://github.com/user-attachments/assets/c4653e0c-5caa-447f-ad14-edaf3d395113)
+
 
 ```
 .github/workflows/ci-cd-pipeline.yml
