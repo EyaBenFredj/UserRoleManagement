@@ -144,9 +144,11 @@ user-role-management-frontend/
 
 
 ### 👉 Angular Frontend Pages
-![image](https://github.com/user-attachments/assets/76fe91b2-db92-4194-9c43-4c4d95cb49d8)
-![image](https://github.com/user-attachments/assets/d6f83969-a4f6-4da5-bddc-cf0a78c1abf0)
-![image](https://github.com/user-attachments/assets/5cb61a37-95cd-4a85-8ad9-43d186409ba6)
+![image](https://github.com/user-attachments/assets/32461121-cea2-4da6-af05-4a1e3f751284)
+![image](https://github.com/user-attachments/assets/9e7f9d67-d0e7-43f7-a701-64c656657b57)
+![image](https://github.com/user-attachments/assets/84685752-cb56-45a8-b5b8-9e739a1f364e)
+
+
 ---
 
 ## 📦 Deployment
