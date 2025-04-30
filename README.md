@@ -172,6 +172,8 @@ A sample GitHub Actions pipeline is included:
 It handles linting, building, and testing on push to `main`.
 
 ---
+##Docker 
+![image](https://github.com/user-attachments/assets/4edd455c-bb3c-4989-a937-1065da7cc55c)
 
 ## 🤝 Contributing
 
