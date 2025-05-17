@@ -213,30 +213,6 @@ Visit:
 ##Unit Test Result
 ![image](https://github.com/user-attachments/assets/cbe32c76-eefc-4f78-b180-96b8a0dc6825)
 
-## 🧠 Git Instructions
-
-To push this project to GitHub:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit - complete user-role backend"
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
-```
-
-Or use Visual Studio → View → Git Changes → Commit & Push.
-
----
-
-## 📦 Future Improvements
-
-- Add refresh tokens & token revocation
-- Role-based authorization policies (`[Authorize(Roles = "...")]`)
-- Email verification on registration
-- Unit & integration test suite with xUnit
-
----
 
 ## ✨ Credits
 
